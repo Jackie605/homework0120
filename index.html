@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div {
+		border:1px solid #000;
+		box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.3);
+	}
+	.change {
+		color:#fff;
+		background-color: #000;
+	}
+
+	</style>
+</head>
+<body>
+	<div id="jirengu">
+    <h1>hello</h1>
+    <p>jirengu</p>
+
+	</div>
+	<button id='add'>add</button>
+	<button id='remove'>remove</button>
+	<button id='toggle1'>toggle1</button>
+	<button id='toggle2'>toggle2</button>
+	<script>
+var div = document.querySelector('div');
+var add = document.querySelector('#add');
+var remove = document.querySelector('#remove');
+var toggle1 = document.querySelector('#toggle1');
+var toggle2 = document.querySelector('#toggle2');
+add.onclick = function() {
+  div.classList.add('change');
+}
+remove.onclick = function() {
+  div.classList.remove('change');
+}
+toggle1.onclick = function() {
+  if(div.classList.contains('change')){
+  div.classList.remove('change');
+}else{
+  div.classList.add('change');
+}
+}
+toggle2.onclick = function() {
+  div.classList.toggle('change');
+}
+	</script>
+</body>
+</html>
