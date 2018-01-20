@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <style>
+  .test {
+    border: 1px solid #000;
+    padding:150px 0;
+  }
+  </style>
+</head>
+<body>
+  <div class="test">
+  <button class="btn1">button1</button>
+    <button class="btn2">button2</button>
+  <a href="####">baidu</a>
+  </div>
+  <script>
+var btn1 = document.querySelector('.btn1');
+var div = document.querySelector('.test');
+var btn2 = document.querySelector('.btn2');
+document.body.addEventListener('click', function(e){
+  console.log("body 捕获");
+},true);
+document.body.addEventListener('click', function(e){
+  console.log('body 冒泡');
+},false);
+div.addEventListener('click', function(e){
+  console.log('div 捕获');
+},true);
+div.addEventListener('click', function(e){
+  console.log('div 冒泡');
+},false);
+btn1.addEventListener('click', function(e){
+  console.log('button1 捕获');
+},true);
+btn1.addEventListener('click', function(e){
+  console.log('button1 冒泡');
+},false);
+btn2.addEventListener('click', function(e){
+  console.log('button2 捕获');
+  e.stopPropagation();
+},true);
+btn2.addEventListener('click', function(e){
+  console.log('button2 冒泡');
+},false);
+  </script>
+</body>
+</html>
